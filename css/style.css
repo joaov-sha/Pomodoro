@@ -22,4 +22,9 @@ body{
 
 .relogio button{
     padding: 5px;
+    margin-bottom: 5px;
+}
+
+.relogio button:hover{
+    cursor: pointer;
 }
