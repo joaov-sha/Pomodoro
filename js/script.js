@@ -2,7 +2,9 @@ window.addEventListener("load",function(){
 
     relogio = {horas:"0", minutos:"0", segundos:"0", milissegundos:"0"};
 
-    document.getElementById("tempo").innerText = `${relogio.horas.padStart(2,'0')}:${relogio.minutos.padStart(2,'0')}:${relogio.segundos.padStart(2,'0')} ${relogio.milissegundos.padStart(3,'00')}`;
+    document.getElementById("tempo").innerText = `${relogio.horas.padStart(2,'0')}:${relogio.minutos.padStart(2,'0')}:${relogio.segundos.padStart(2,'0')}`;
+    
+    //${relogio.milissegundos.padStart(3,'00')}`;
     
     
     document.getElementById("iniciar").addEventListener("click",function(event){
@@ -15,12 +17,12 @@ window.addEventListener("load",function(){
             document.getElementById("iniciar").innerHTML = "Pausar";
 
             timer = setInterval(function(){
-                relogio.milissegundos++;
+                // relogio.milissegundos++;
 
-                if(relogio.milissegundos > 999){
-                    relogio.milissegundos = 0;
-                    relogio.segundos++;
-                }
+                // if(relogio.milissegundos > 999){
+                //     relogio.milissegundos = 0;
+                //     relogio.segundos++;
+                // }
 
                 if(relogio.segundos > 59){
                     relogio.segundos = 0;
@@ -57,7 +59,8 @@ window.addEventListener("load",function(){
         relogio.horas = 0;
         relogio.minutos = 0;
         relogio.segundos = 0;
-        relogio.milissegundos = 0;
+        
+        // relogio.milissegundos = 0;
         
         ajustarPonteiros();
 
@@ -65,6 +68,8 @@ window.addEventListener("load",function(){
     })
 
     function ajustarPonteiros(){
-        document.getElementById("tempo").innerText = `${(relogio.horas).toString().padStart(2,'0')}:${(relogio.minutos).toString().padStart(2,'0')}:${(relogio.segundos).toString().padStart(2,'0')} ${(relogio.milissegundos).toString().padStart(3,'00')}`;
+        document.getElementById("tempo").innerText = `${(relogio.horas).toString().padStart(2,'0')}:${(relogio.minutos).toString().padStart(2,'0')}:${(relogio.segundos).toString().padStart(2,'0')}`;
+
+        // ${(relogio.milissegundos).toString().padStart(3,'00')}`;
     }
 });
